@@ -146,8 +146,9 @@ namespace Lab5
          * swap the RAM memory location of the two strings*/
         private void Swap(ref string str1, ref string str2)
         {
+            string temp = str1;
             str1 = str2;
-            str2 = str1;
+            str2 = temp;
         }
         /* CheckInput function
          * send: none
@@ -155,10 +156,10 @@ namespace Lab5
          * tests if textboxes have data */
         private bool CheckInput()
         {
-            bool testInput = false;
+            bool testInput = true;
 
             if (txtString1.Text == "" || txtString2.Text == "")
-                testInput = true;
+                testInput = false;
 
             return testInput;
         }
@@ -232,7 +233,7 @@ namespace Lab5
             int i = 0, sum = 0, howMany = (int)nudHowMany.Value;
             while (i < howMany)
             {
-                sum += Convert.ToInt32(lstNumbers.Items[i])                
+                sum += Convert.ToInt32(lstNumbers.Items[i]);                
                 i++;                
             }
 
